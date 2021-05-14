@@ -48,18 +48,30 @@ namespace InsuranceContractsManager
         }
         public static void RemoveContract(string ID)
         {
-            var removeContract = contracts.Find(x => x.GetID() == ID);
-            contracts.Remove(removeContract);
+            foreach (var removeContract in contracts)
+            {
+                if (removeContract.GetID() == ID)
+                {
+                    contracts.Remove(removeContract);
+                    return;
+                }
+            } 
         }
         public static void ModifyContract(string ID, string new_type, string new_buyer_name, string new_beneficiary_name,
             long new_amount, int new_contract_term)
         {
-            var modiContract = contracts.Find(x => x.GetID() == ID);
-            modiContract.SetType(new_type);
-            modiContract.SetBuyerName(new_buyer_name);
-            modiContract.SetBeneficiaryName(new_beneficiary_name);
-            modiContract.SetAmount(new_amount);
-            modiContract.SetContractTerm(new_contract_term);
+            foreach (var modiContract in contracts)
+            {
+                if (modiContract.GetID() == ID)
+                {
+                    modiContract.SetType(new_type);
+                    modiContract.SetBuyerName(new_buyer_name);
+                    modiContract.SetBeneficiaryName(new_beneficiary_name);
+                    modiContract.SetAmount(new_amount);
+                    modiContract.SetContractTerm(new_contract_term);
+                    return;
+                }
+            }
         }
         public static List<InsuranceContract> Search(int term)
         {
