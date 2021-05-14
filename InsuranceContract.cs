@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace InsuranceContractsManager
 {
-    public static class InsuranceContractsManager
+    public static class InsuranceContractsManagement
     {
         private static List<InsuranceContract> contracts = new List<InsuranceContract>();
         public static List<InsuranceContract> GetListContract() { return contracts; }

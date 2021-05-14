@@ -33,7 +33,7 @@ namespace HopDongBaoHiem
 
             btnSearchByTerm.MouseLeftButtonUp += (s, e) =>
             {
-                List<InsuranceContractsManager.InsuranceContract> contracts = InsuranceContractsManager.InsuranceContractsManager.Search(Convert.ToInt32(Termtxt.Text));
+                List<InsuranceContractsManager.InsuranceContract> contracts = InsuranceContractsManager.InsuranceContractsManagement.Search(Convert.ToInt32(Termtxt.Text));
 
                 var listView = new PageList(contracts);
                 mainFrame.Navigate(listView);
@@ -41,8 +41,8 @@ namespace HopDongBaoHiem
 
             btnSearchByDate.MouseLeftButtonUp += (s, e) =>
              {
-                 List<InsuranceContractsManager.InsuranceContract> contracts = InsuranceContractsManager.InsuranceContractsManager.Search(Convert.ToDateTime(dateFrom.SelectedDate), Convert.ToDateTime(dateTo.SelectedDate));
-                 double x = InsuranceContractsManager.InsuranceContractsManager.CalculateProfit(contracts);
+                 List<InsuranceContractsManager.InsuranceContract> contracts = InsuranceContractsManager.InsuranceContractsManagement.Search(Convert.ToDateTime(dateFrom.SelectedDate), Convert.ToDateTime(dateTo.SelectedDate));
+                 double x = InsuranceContractsManager.InsuranceContractsManagement.CalculateProfit(contracts);
                  string profit = "Profit = " + x.ToString();
 
                  var listView = new PageList(contracts);

@@ -26,7 +26,7 @@ namespace HopDongBaoHiem
             InitializeComponent();
 
             List<Contract> contracts = new List<Contract>();
-            foreach(InsuranceContract con in InsuranceContractsManager.InsuranceContractsManager.GetListContract())
+            foreach(InsuranceContract con in InsuranceContractsManager.InsuranceContractsManagement.GetListContract())
             {
                 contracts.Add(new Contract()
                 {

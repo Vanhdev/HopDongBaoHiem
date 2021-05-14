@@ -23,10 +23,21 @@ namespace HopDongBaoHiem
         public PageCreate()
         {
             InitializeComponent();
+
             btnDel.Visibility = Visibility.Hidden;
+            btnSave.IsEnabled = false;
+
+            Typetb.TextChanged += (s, e) =>
+            {
+                if (Typetb.Text.ToUpper() == "BASIC" || Typetb.Text.ToUpper() == "ADVANCED")
+                {
+                    btnSave.IsEnabled = true;
+                }
+            };
+            
             btnSave.MouseLeftButtonUp += (s, e) =>
             {
-                InsuranceContractsManager.InsuranceContractsManager.AddContract(Typetb.Text.ToUpper(), Custb.Text, Bentb.Text, Convert.ToInt64(Valtb.Text), Convert.ToInt32(Termtb.Text), DateTime.Now);
+                InsuranceContractsManager.InsuranceContractsManagement.AddContract(Typetb.Text.ToUpper(), Custb.Text, Bentb.Text, Convert.ToInt64(Valtb.Text), Convert.ToInt32(Termtb.Text), DateTime.Now);
 
                 var listView = new PageList();
                 NavigationService.GetNavigationService(this).Navigate(listView);
@@ -52,7 +63,7 @@ namespace HopDongBaoHiem
 
             btnSave.MouseLeftButtonUp += (s, e) =>
             {
-                InsuranceContractsManager.InsuranceContractsManager.ModifyContract(contract.ID, Typetb.Text.ToUpper(), Custb.Text, Bentb.Text, Convert.ToInt64(Valtb.Text), Convert.ToInt32(Termtb.Text));
+                InsuranceContractsManager.InsuranceContractsManagement.ModifyContract(contract.ID, Typetb.Text.ToUpper(), Custb.Text, Bentb.Text, Convert.ToInt64(Valtb.Text), Convert.ToInt32(Termtb.Text));
                 
                 var listView = new PageList();
                 NavigationService.GetNavigationService(this).Navigate(listView);
@@ -60,7 +71,7 @@ namespace HopDongBaoHiem
 
             btnDel.MouseLeftButtonUp += (s, e) =>
             {
-                InsuranceContractsManager.InsuranceContractsManager.RemoveContract(contract.ID);
+                InsuranceContractsManager.InsuranceContractsManagement.RemoveContract(contract.ID);
                 
                 var listView = new PageList();
                 NavigationService.GetNavigationService(this).Navigate(listView);
