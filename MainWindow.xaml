@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HopDongBaoHiem"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1000">
+        Title="MainWindow" Height="600" Width="1200">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
@@ -19,16 +19,14 @@
                 </LinearGradientBrush>
             </Grid.Background>
             <Grid.RowDefinitions>
-                <RowDefinition Height="52"/>
-                <RowDefinition Height="9*" />
+                <RowDefinition Height="60"/>
+                <RowDefinition />
             </Grid.RowDefinitions>
 
-            <StackPanel Background="Transparent">
-                <TextBlock Foreground="White"
+            <TextBlock Foreground="White"
                        Margin="10"
                        FontSize="30"
                        HorizontalAlignment="Center">Insurance</TextBlock>
-            </StackPanel>
             <StackPanel Margin="10"
                         Grid.Row="1"
                         Name="navContent">

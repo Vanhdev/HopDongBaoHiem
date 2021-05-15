@@ -12,9 +12,9 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto"
                   HorizontalScrollBarVisibility="Auto"
                   CanContentScroll="True">
-            <DataGrid x:Name="ContractData" AutoGenerateColumns="False">
+            <DataGrid x:Name="ContractData" AutoGenerateColumns="False"
+                      FontSize="18">
                 <DataGrid.Columns>
-
                     <DataGridTextColumn Header="ID" 
                                         Binding="{Binding ID}"
                                         CanUserResize="True"
@@ -39,7 +39,6 @@
                                         Binding="{Binding date}" 
                                         CanUserResize="True"
                                         Width="Auto"/>
-
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>

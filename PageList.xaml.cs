@@ -1,17 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using InsuranceContractsManager;
 
 namespace HopDongBaoHiem
@@ -24,9 +14,8 @@ namespace HopDongBaoHiem
         public PageList()
         {
             InitializeComponent();
-
             List<Contract> contracts = new List<Contract>();
-            foreach(InsuranceContract con in InsuranceContractsManager.InsuranceContractsManagement.GetListContract())
+            foreach(InsuranceContract con in InsuranceContractsManagement.GetListContract())
             {
                 contracts.Add(new Contract()
                 {
@@ -50,7 +39,6 @@ namespace HopDongBaoHiem
         public PageList(List<InsuranceContract> cons)
         {
             InitializeComponent();
-
             List<Contract> contracts = new List<Contract>();
             foreach (InsuranceContract con in cons)
             {
@@ -74,6 +62,7 @@ namespace HopDongBaoHiem
             };
         }
     }
+
     public class Contract
     {
         public string ID { get; set; }

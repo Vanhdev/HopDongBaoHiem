@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="HopDongBaoHiem.PageCreate" BaseTypeListCollapsed="true">
-    <Position X="8.75" Y="3.25" Width="1.5" />
+    <Position X="10.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PageCreate.xaml.cs</FileName>
@@ -9,7 +9,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="HopDongBaoHiem.PageList" BaseTypeListCollapsed="true">
-    <Position X="11.5" Y="1.5" Width="1.5" />
+    <Position X="13" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PageList.xaml.cs</FileName>
@@ -17,22 +17,22 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="HopDongBaoHiem.Contract">
-    <Position X="8" Y="5.75" Width="1.5" />
+    <Position X="4.75" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAABAAAAgAAAAAAAAAAAAAARACAAAAAIAQAAAAA=</HashCode>
       <FileName>PageList.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HopDongBaoHiem.SearchPage" BaseTypeListCollapsed="true">
-    <Position X="6" Y="1.25" Width="1.5" />
+    <Position X="7.5" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SearchPage.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="InsuranceContractsManager.InsuranceContractsManager">
-    <Position X="4" Y="3.25" Width="2.5" />
+  <Class Name="InsuranceContractsManager.InsuranceContractsManagement">
+    <Position X="4.5" Y="2.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAQAAAAAAEABAAQAAMAAAAAAAAEAAAgCAA=</HashCode>
       <FileName>InsuranceContract.cs</FileName>
@@ -60,13 +60,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="System.Windows.Controls.Page" Collapsed="true">
-    <Position X="8.75" Y="1.5" Width="1.5" />
+    <Position X="10.25" Y="1.25" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="System.Object" Collapsed="true">
-    <Position X="5.25" Y="6.75" Width="1.5" />
-    <TypeIdentifier />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
