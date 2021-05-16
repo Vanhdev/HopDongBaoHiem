@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Controls;
-using System.Windows;
 
 namespace HopDongBaoHiem
 {
@@ -21,18 +20,23 @@ namespace HopDongBaoHiem
                 dateTo.SelectedDateChanged += delegate { btnSearchByDate.IsEnabled = true; };
             };
 
-            btnSearchByTerm.MouseLeftButtonUp += (s, e) =>
+            btnSearchByTerm.MouseLeftButtonDown += (s, e) =>
             {
                 List<InsuranceContractsManager.InsuranceContract> contracts = InsuranceContractsManager.InsuranceContractsManagement.Search(Convert.ToInt32(Termtxt.Text));
 
                 var listView = new PageList(contracts);
                 mainFrame.Navigate(listView);
+
+                profitShow.Children.Clear();
             };
 
-            btnSearchByDate.MouseLeftButtonUp += (s, e) =>
+            btnSearchByDate.MouseLeftButtonDown += (s, e) =>
              {
                  List<InsuranceContractsManager.InsuranceContract> contracts = InsuranceContractsManager.InsuranceContractsManagement.Search(Convert.ToDateTime(dateFrom.SelectedDate), Convert.ToDateTime(dateTo.SelectedDate));
+
+
                  double x = InsuranceContractsManager.InsuranceContractsManagement.CalculateProfit(contracts);
+
                  string profit = "Profit = " + x.ToString();
 
                  var listView = new PageList(contracts);

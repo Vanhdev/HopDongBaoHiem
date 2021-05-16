@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -28,7 +25,7 @@ namespace HopDongBaoHiem
                 }
             };
             
-            btnSave.MouseLeftButtonUp += (s, e) =>
+            btnSave.MouseLeftButtonDown += (s, e) =>
             {
                 InsuranceContractsManager.InsuranceContractsManagement.AddContract(Typetb.Text.ToUpper(), Custb.Text, Bentb.Text, Convert.ToInt64(Valtb.Text), Convert.ToInt32(Termtb.Text), DateTime.Now);
 
@@ -54,7 +51,7 @@ namespace HopDongBaoHiem
             Termtb.Text = contract.term.ToString();
             Termtb.TextChanged += (s, e) => { btnSave.IsEnabled = true; btnDel.IsEnabled = false; };
 
-            btnSave.MouseLeftButtonUp += (s, e) =>
+            btnSave.MouseLeftButtonDown += (s, e) =>
             {
                 InsuranceContractsManager.InsuranceContractsManagement.ModifyContract(contract.ID, Typetb.Text.ToUpper(), Custb.Text, Bentb.Text, Convert.ToInt64(Valtb.Text), Convert.ToInt32(Termtb.Text));
                 
@@ -62,7 +59,7 @@ namespace HopDongBaoHiem
                 NavigationService.GetNavigationService(this).Navigate(listView);
             };
 
-            btnDel.MouseLeftButtonUp += (s, e) =>
+            btnDel.MouseLeftButtonDown += (s, e) =>
             {
                 InsuranceContractsManager.InsuranceContractsManagement.RemoveContract(contract.ID);
                 

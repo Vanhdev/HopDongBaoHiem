@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace InsuranceContractsManager
 {
@@ -10,7 +9,7 @@ namespace InsuranceContractsManager
             : base(buyer_name, beneficiary_name, amount, contract_term, signing_date)
         {
             this.type = "BASIC";
-            this.id = "B" + signing_date.ToString("ddMMyyyyHHmm");
+            this.id = "B" + signing_date.ToString("ddMMyyyyHHmmss");
         }
 
         public override double CalculateProfit()

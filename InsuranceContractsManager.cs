@@ -95,13 +95,6 @@ namespace InsuranceContractsManager
             }
             return searchSell;
         }
-        public static double CalculateProfit()
-        {
-            double total = 0;
-            foreach (InsuranceContract contr in contracts)
-                total += contr.CalculateProfit();
-            return total;
-        }
         public static double CalculateProfit(List<InsuranceContract> contrs)
         {
             double total = 0;
