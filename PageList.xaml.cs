@@ -11,10 +11,13 @@ namespace HopDongBaoHiem
     /// </summary>
     public partial class PageList : Page
     {
-        public PageList()
+        public PageList()   //Gọi khi hiển thị tất cả hợp đồng
         {
             InitializeComponent();
-            List<Contract> contracts = new List<Contract>();
+
+            List<Contract> contracts = new List<Contract>();    //Tạo danh sách để liên kết với DataGrid
+
+            //Copy thông tin từ danh sách hợp đồng ở InsuranceContractsManagement sang danh sách vừa tạo
             foreach(InsuranceContract con in InsuranceContractsManagement.GetListContract())
             {
                 contracts.Add(new Contract()
@@ -28,18 +31,25 @@ namespace HopDongBaoHiem
                     type = con.Gettype()
                 }); 
             }
-            ContractData.ItemsSource = contracts;
+            ContractData.ItemsSource = contracts;   //Liên kết DataGrid với danh sách vừa tạo để hiển thị danh sách
+
+            //Sự kiện double click vào dòng trong danh sách
             ContractData.MouseDoubleClick += (s, e) =>
              {
-                 Contract contract = (Contract)ContractData.SelectedItem;
+                 Contract contract = (Contract)ContractData.SelectedItem;   //Lấy thông tin hợp đồng trên dòng
+
+                 //Hiển thị Form sửa/xóa với thông tin của hợp đồng trên dòng
                  var createForm = new PageCreate(contract);
                  NavigationService.GetNavigationService(this).Navigate(createForm);
              };
         }
-        public PageList(List<InsuranceContract> cons)
+        public PageList(List<InsuranceContract> cons)   //Gọi khi thống kê, tìm kiếm hợp đồng
         {
             InitializeComponent();
-            List<Contract> contracts = new List<Contract>();
+
+            List<Contract> contracts = new List<Contract>();    //Tạo một danh sách hợp đồng
+
+            //Copy thông tin từ danh sách được truyền vào sang danh sách vừa tạo
             foreach (InsuranceContract con in cons)
             {
                 contracts.Add(new Contract()
@@ -53,10 +63,14 @@ namespace HopDongBaoHiem
                     type = con.Gettype()
                 });
             }
-            ContractData.ItemsSource = contracts;
+            ContractData.ItemsSource = contracts;   //Liên kết DataGrid với danh sách vừa tạo để hiển thị danh sách
+
+            //Sự kiện double click vào dòng trong danh sách
             ContractData.MouseDoubleClick += (s, e) =>
             {
-                Contract contract = (Contract)ContractData.SelectedItem;
+                Contract contract = (Contract)ContractData.SelectedItem;    //Lấy thông tin hợp đồng trên dòng
+
+                //Hiển thị Form sửa/xóa với thông tin của hợp đồng trên dòng
                 var createForm = new PageCreate(contract);
                 NavigationService.GetNavigationService(this).Navigate(createForm);
             };
