@@ -1,5 +1,7 @@
 ﻿using System;
 
+
+//Trần Văn Kiên
 namespace InsuranceContractsManager
 {
     internal class AdvancedInsuranceContract : InsuranceContract

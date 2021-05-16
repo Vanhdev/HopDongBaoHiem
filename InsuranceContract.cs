@@ -1,5 +1,6 @@
 ﻿using System;
 
+//Vũ Xuân Bắc
 namespace InsuranceContractsManager
 {
     public abstract class InsuranceContract

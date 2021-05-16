@@ -1,5 +1,6 @@
 ﻿using System;
 
+//Trần Việt Anh
 namespace InsuranceContractsManager
 {
     internal class BasicInsuranceContract : InsuranceContract
