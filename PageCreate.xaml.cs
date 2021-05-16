@@ -5,9 +5,6 @@ using System.Windows.Navigation;
 
 namespace HopDongBaoHiem
 {
-    /// <summary>
-    /// Interaction logic for PageCreate.xaml
-    /// </summary>
     public partial class PageCreate : Page
     {
         public PageCreate()     //Gọi khi tạo hợp đồng

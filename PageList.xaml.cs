@@ -6,9 +6,6 @@ using InsuranceContractsManager;
 
 namespace HopDongBaoHiem
 {
-    /// <summary>
-    /// Interaction logic for PageList.xaml
-    /// </summary>
     public partial class PageList : Page
     {
         public PageList()   //Gọi khi hiển thị tất cả hợp đồng

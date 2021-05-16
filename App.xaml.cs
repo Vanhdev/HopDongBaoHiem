@@ -2,9 +2,6 @@
 
 namespace HopDongBaoHiem
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
         //Đọc dữ liệu khi khởi động
