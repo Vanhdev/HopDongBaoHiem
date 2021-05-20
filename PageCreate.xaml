@@ -27,15 +27,18 @@
                VerticalAlignment="Center" 
                Content="Type:"
                FontSize="24"/>
-        <TextBox Grid.Column="1"
-                 x:Name="Typetb"
-                 VerticalContentAlignment="Center"
-                 FontSize="20"
-                 HorizontalAlignment="Left"
-                 BorderBrush="Black" 
-                 Width="400"
-                 Height="50"
-                 Margin="5"/>
+        <StackPanel Orientation="Horizontal" Grid.Column="1">
+            <RadioButton x:Name="Adbtn"
+                         Content="ADVANCED"
+                         FontSize="20"
+                         VerticalContentAlignment="Center"
+                         Margin="20"/>
+            <RadioButton x:Name="Babtn"
+                         Content="BASIC"
+                         FontSize="20"
+                         VerticalContentAlignment="Center"
+                         Margin="20"/>
+        </StackPanel>
 
         <Label Grid.Row="1"
             HorizontalAlignment="Right" 
@@ -47,7 +50,8 @@
                  x:Name="Custb"
                  VerticalContentAlignment="Center"
                  HorizontalAlignment="Left"
-                 BorderBrush="Black" 
+                 BorderBrush="Black"
+                 FontSize="20"
                  Width="400"
                  Height="50"
                  Margin="5"/>
@@ -63,6 +67,7 @@
                  VerticalContentAlignment="Center"
                  HorizontalAlignment="Left"
                  BorderBrush="Black"
+                 FontSize="20"
                  Width="400" 
                  Height="50"
                  Margin="5"/>
@@ -78,6 +83,7 @@
                  VerticalContentAlignment="Center"
                  HorizontalAlignment="Left"
                  BorderBrush="Black" 
+                 FontSize="20"
                  Width="400" 
                  Height="50"
                  Margin="5"/>
@@ -93,6 +99,7 @@
                  VerticalContentAlignment="Center"
                  HorizontalAlignment="Left"
                  BorderBrush="Black"
+                 FontSize="20"
                  Width="400" 
                  Height="50" 
                  Margin="5"/>

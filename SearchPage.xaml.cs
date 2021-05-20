@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace HopDongBaoHiem
@@ -22,15 +23,30 @@ namespace HopDongBaoHiem
             //Sự kiện ấn nút Search bên trên
             btnSearchByTerm.MouseLeftButtonDown += (s, e) =>
             {
-                //Tạo một danh sách hợp đồng, gán bằng danh sách hợp đồng tìm kiếm được
-                List<InsuranceContractsManager.InsuranceContract> contracts = InsuranceContractsManager.InsuranceContractsManagement.Search(Convert.ToInt32(Termtxt.Text));
+                try
+                {
+                    //Tạo một danh sách hợp đồng, gán bằng danh sách hợp đồng tìm kiếm được
+                    List<InsuranceContractsManager.InsuranceContract> contracts = InsuranceContractsManager.InsuranceContractsManagement.Search(Convert.ToInt32(Termtxt.Text));
 
-                //Hiển thị danh sách hợp đồng tìm kiếm được
-                var listView = new PageList(contracts);
-                mainFrame.Navigate(listView);
+                    //Hiển thị danh sách hợp đồng tìm kiếm được
+                    var listView = new PageList(contracts);
+                    mainFrame.Navigate(listView);
 
-                //Xóa thông tin lợi nhuận nếu có
-                profitShow.Children.Clear();
+                    //Xóa thông tin lợi nhuận nếu có
+                    profitShow.Children.Clear();
+                }
+                catch
+                {
+                    //Kiểm tra đầu vào có phải là một số không
+                    foreach (char t in Termtxt.Text)
+                    {
+                        if (!char.IsNumber(t))                  //Nếu không là số
+                        {
+                            MessageBox.Show("Please, enter a number!");  //In ra thông báo 
+                            break;
+                        }
+                    }
+                }
             };
 
             //Sự kiện ấn nút Search bên dưới
