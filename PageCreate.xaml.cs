@@ -7,6 +7,30 @@ namespace HopDongBaoHiem
 {
     public partial class PageCreate : Page
     {
+        public int CheckError(string val, string term)      //Hàm check lỗi sai định dạng value và term
+        {
+            int a = 0, b = 0;
+
+            foreach (char v in val)
+            {
+                if (!char.IsNumber(v))
+                {
+                    a = 1;
+                    break;
+                }
+            }
+            foreach (char t in term)
+            {
+                if (!char.IsNumber(t))
+                {
+                    b = 1;
+                    break;
+                }
+            }
+
+            return (a * 2 + b);
+        }
+
         public PageCreate()     //Gọi khi tạo hợp đồng
         {
             InitializeComponent();
@@ -35,8 +59,21 @@ namespace HopDongBaoHiem
                 }
                 catch
                 {
-                    //Kiểm tra đã điền đầy đủ thông tin chưa
+                    //Kiểm tra đã điền đầy đủ thông tin chưa, nếu chưa, hiển thị thông báo
                     if ((Adbtn.IsChecked == false && Babtn.IsChecked == false) || Bentb.Text.Equals("") || Valtb.Text.Equals("") || Termtb.Text.Equals("")) MessageBox.Show("Please, fill out this form!");
+                    //Hiển thị thông báo nếu xảy ra các lỗi khác
+                    else
+                    {
+                        switch (CheckError(Valtb.Text, Termtb.Text))
+                        {
+                            case 1:                 
+                                MessageBox.Show("Please, enter a number in Term Blank!"); break;
+                            case 2:
+                                MessageBox.Show("Please, enter a number in Value Blank!"); break;
+                            case 3:
+                                MessageBox.Show("Please, enter a number in Value Blank!\nPlease, enter a number in Term Blank!"); break;
+                        }
+                    }
                 }
             };
         }
@@ -85,7 +122,21 @@ namespace HopDongBaoHiem
                 }
                 catch
                 {
+                    //Kiểm tra đã điền đầy đủ thông tin chưa, nếu chưa, hiển thị thông báo
                     if (Bentb.Text == "" || Valtb.Text == "" || Termtb.Text == "") MessageBox.Show("Please, fill out this form!");
+                    //Hiển thị thông báo nếu xảy ra các lỗi khác
+                    else
+                    {
+                        switch(CheckError(Valtb.Text, Termtb.Text))
+                        {
+                            case 1: 
+                                MessageBox.Show("Please, enter a number in Term Blank!"); break;
+                            case 2:
+                                MessageBox.Show("Please, enter a number in Value Blank!"); break;
+                            case 3:
+                                MessageBox.Show("Please, enter a number in Value Blank and Term Blank!"); break;
+                        }
+                    }    
                 }
             };
 
